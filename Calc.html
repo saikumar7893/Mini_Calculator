@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="cal.css">
+	<title>Calculator</title>
+</head>
+<body>
+	<div class="container">
+		<div class="result">
+			<p id="result">0</p>
+		</div>
+		<div class="buttons">
+			<div class="row">
+				<button>C</button>
+				<button>DEL</button>
+				<button>+</button>
+				<button>%</button>
+			</div>
+
+			<div class="row">
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+				<button>/</button>
+		</div>
+		<div class="row">
+				<button>4</button>
+				<button>5</button>
+				<button>6</button>
+				<button>*</button>
+		</div>
+		<div class="row">
+				<button>1</button>
+				<button>2</button>
+				
+				<button>3</button>
+				<button>-</button>
+		</div>
+		<div class="row">
+				<button id="dot">.</button>
+				<button>0</button>
+				<button id="equal">=</button>
+
+				
+		</div>
+	</div>
+	<script type="text/javascript">
+let buttons =document.getElementsByTagName('button');
+
+let result = document.getElementById('result');
+
+for(i=0;i<buttons.length;i++){
+    buttons[i].onclick = function(){
+        let input = this.innerText;
+        updateDisplay(input)
+        
+    }
+}
+function updateDisplay(input){
+    let currentDisplay = result.innerText
+    if(currentDisplay=="0"){
+        if(input!="C"&&input!="DEL" && input!="="){
+            result.innerText=""
+            result.innerText=input
+        }
+
+    }
+    else{
+       
+    
+        if(input=="DEL"){
+            result.innerText = currentDisplay.substring(0,currentDisplay.length-1)
+            // if(result.innerText==""){
+            //     result.innerText="0"
+            // }
+        }
+        if(input=="C"){
+            result.innerText="0"
+        }
+        if(input!="C"&&input!="DEL"&&input!="="){
+            result.innerText+=input
+            x = x+6
+            x+=7
+        }
+
+        if(input=="="){          
+            let display = result.innerText
+            result.innerText= eval(display)
+        }
+    }
+
+}
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
