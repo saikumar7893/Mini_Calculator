@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style type="text/css">
+		td{
+			text-align: center;
+		}
+
+		.co{
+			background-color: lightblue;
+			color: black;
+		}
+		button{
+			border: 0px;
+		}
+		button:hover
+		{
+			background-color:orange ;
+		}
+	</style>
+	<script type="text/javascript">
+		function AC()
+		{
+			document.getElementById("result").value="";
+		}
+		function show(input)
+		{
+			document.getElementById("result").value+=input;
+		}
+
+		function Cal()
+		{
+			var output=eval(document.getElementById("result").value);
+			document.getElementById("result").value=output;
+		}
+	</script>
+</head>
+<body>
+	<center><h1 style="color: darkorange;">Mini Calculator</h1></center>
+	<center><table border="1px" style="background-color: black; height: 200px; width:200px;">
+		<tr>
+			<td colspan="3"><input type="text" id="result" ></td>
+			<td class="co"><button class="co" onclick="AC()">AC</button></td>
+		</tr>
+		<tr>
+			<td class="co" ><button class="co" onclick="show('1')">1</button></td>
+			<td class="co"><button class="co" onclick="show('2')">2</button></td>
+			<td class="co"><button class="co" onclick="show('3')">3</button></td>
+			<td class="co"><button class="co" onclick="show('+')">+</button></td>
+		</tr>
+		<tr>
+			<td class="co"><button class="co" onclick="show('4')">4</button></td>
+			<td class="co"><button class="co" onclick="show('5')">5</button></td>
+			<td class="co"><button class="co" onclick="show('6')">6</button></td>
+			<td class="co"><button class="co" onclick="show('-')">-</button></td>
+		</tr>
+		<tr>
+			<td class="co"><button class="co" onclick="show('7')">7</button></td>
+			<td class="co"><button class="co" onclick="show('8')">8</button></td>
+			<td class="co"><button class="co" onclick="show('9')">9</button></td>
+			<td class="co"><button class="co" onclick="show('*')">*</button></td>
+		</tr>
+		<tr>
+			<td class="co"><button class="co" onclick="show('0')">0</button></td>
+			<td class="co"><button class="co" onclick="show('%')">%</button></td>
+			<td class="co"><button class="co" onclick="show('/')">/</button></td>
+			<td class="co"><button class="co" onclick="Cal()">=</button></td>
+		</tr>
+	</table></center>
+
+</body>
+</html>
